@@ -1,23 +1,17 @@
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  ManyToOne,
-  OneToMany,
-} from 'typeorm';
-import { Cidade } from './cidade.entity';
-import { Curso } from './curso.entity';
+// instituicao.entity.ts
+import { Entity, Column, PrimaryColumn, OneToMany } from "typeorm";
+import { Curso } from "./curso.entity";
 
-@Entity('instituicoes')
+@Entity("instituicao")
 export class Instituicao {
-  @PrimaryGeneratedColumn()
+  @PrimaryColumn()
   id: number;
 
   @Column()
   nome: string;
 
-  @ManyToOne(() => Cidade, (cidade) => cidade.instituicoes)
-  cidade: Cidade;
+  @Column()
+  sigla: string;
 
   @OneToMany(() => Curso, (curso) => curso.instituicao)
   cursos: Curso[];

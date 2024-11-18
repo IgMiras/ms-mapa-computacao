@@ -1,14 +1,12 @@
 import { Module } from "@nestjs/common";
-import { TypeOrmModule } from "@nestjs/typeorm";
 import { MapaController } from "./mapa.controller";
 import { MapaService } from "./mapa.service";
-import { Curso } from "./entities/curso.entity";
-import { Instituicao } from "./entities/instituicao.entity";
-import { Cidade } from "./entities/cidade.entity";
+import { DatabaseModule } from "src/database/database.module";
+import { mapaProviders } from "./mapa.providers";
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Curso, Instituicao, Cidade])],
+  imports: [DatabaseModule],
   controllers: [MapaController],
-  providers: [MapaService, MapaController],
+  providers: [...mapaProviders, MapaService],
 })
 export class MapaModule {}

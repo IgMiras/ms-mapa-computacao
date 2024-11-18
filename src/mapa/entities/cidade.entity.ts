@@ -1,20 +1,27 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
-import { Instituicao } from "./instituicao.entity";
+// cidade.entity.ts
+import { Entity, Column, PrimaryColumn, OneToMany } from "typeorm";
+import { Curso } from "./curso.entity";
 
-@Entity("cidades")
+@Entity("cidade")
 export class Cidade {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryColumn()
+  cod: number;
 
   @Column()
   nome: string;
 
-  @Column("decimal", { precision: 10, scale: 6 })
+  @Column({ name: "id_estado" })
+  idEstado: number;
+
+  @Column("double")
   latitude: number;
 
-  @Column("decimal", { precision: 10, scale: 6 })
+  @Column("double")
   longitude: number;
 
-  @OneToMany(() => Instituicao, (instituicao) => instituicao.cidade)
-  instituicoes: Instituicao[];
+  @Column()
+  populacao: number;
+
+  @OneToMany(() => Curso, (curso) => curso.cidade)
+  cursos: Curso[];
 }
