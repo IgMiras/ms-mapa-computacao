@@ -16,6 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `curso_programa`
+--
+
+DROP TABLE IF EXISTS `curso_programa`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `curso_programa` (
+  `cod` varchar(13) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `id_area_detalhada` int(11) NOT NULL,
+  `mapa` int(11) NOT NULL,
+  PRIMARY KEY (`cod`),
+  KEY `id_area_detalhada` (`id_area_detalhada`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+--
+-- Dumping data for table `curso_programa`
+--
+
+LOCK TABLES `curso_programa` WRITE;
+/*!40000 ALTER TABLE `curso_programa` DISABLE KEYS */;
+INSERT INTO `curso_programa` VALUES ('481C01','Ciência da computação',481,1),('523E04','Engenharia de computação',523,1),('483S02','Sistemas de informação',483,1),('483A02','Análise e Desenvolvimento de Sistemas (Tecnólogo)',483,1),('523T03','Tecnologia digital',523,1),('481T01','Tecnologia da informação',481,1),('482U01','Uso da internet',482,1),('483A01','Análise de sistemas',483,1),('146F05','Formação de professor de computação (informática)',146,1),('523E08','Engenharia de redes de comunicação',523,1),('213P02','Produção de multimídia',213,1),('213M02','Multimídia',213,1),('481A01','Administração de redes',481,1),('481B01','Banco de dados',481,1),('483S01','Segurança da informação',483,1),('481T02','Tecnologia em desenvolvimento de softwares',481,1),('345A21','Administração de sistemas de informações',345,1);
+/*!40000 ALTER TABLE `curso_programa` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `area_detalhada`
 --
 
@@ -396,33 +424,6 @@ LOCK TABLES `curso_nivel` WRITE;
 /*!40000 ALTER TABLE `curso_nivel` DISABLE KEYS */;
 INSERT INTO `curso_nivel` VALUES ('1','GRADUAÇÃO PRESENCIAL',1),('2','GRADUAÇÃO A DISTÂNCIA',1),('ME','Mestrado',2),('DO','Doutorado',2),('MP','Mestrado Profissional',2),('3','SEQUENCIAL DE FORMAÇÃO ESPECIAL PRESENCIAL',1),('4','SEQUENCIAL DE FORMAÇÃO ESPECIAL A DISTÂNCIA',1);
 /*!40000 ALTER TABLE `curso_nivel` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `curso_programa`
---
-
-DROP TABLE IF EXISTS `curso_programa`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `curso_programa` (
-  `cod` varchar(13) NOT NULL,
-  `nome` varchar(50) NOT NULL,
-  `id_area_detalhada` int(11) NOT NULL,
-  `mapa` int(11) NOT NULL,
-  PRIMARY KEY (`cod`),
-  KEY `id_area_detalhada` (`id_area_detalhada`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `curso_programa`
---
-
-LOCK TABLES `curso_programa` WRITE;
-/*!40000 ALTER TABLE `curso_programa` DISABLE KEYS */;
-INSERT INTO `curso_programa` VALUES ('481C01','Ciência da computação',481,1),('523E04','Engenharia de computação',523,1),('483S02','Sistemas de informação',483,1),('483A02','Análise e Desenvolvimento de Sistemas (Tecnólogo)',483,1),('523T03','Tecnologia digital',523,1),('481T01','Tecnologia da informação',481,1),('482U01','Uso da internet',482,1),('483A01','Análise de sistemas',483,1),('146F05','Formação de professor de computação (informática)',146,1),('523E08','Engenharia de redes de comunicação',523,1),('213P02','Produção de multimídia',213,1),('213M02','Multimídia',213,1),('481A01','Administração de redes',481,1),('481B01','Banco de dados',481,1),('483S01','Segurança da informação',483,1),('481T02','Tecnologia em desenvolvimento de softwares',481,1),('345A21','Administração de sistemas de informações',345,1);
-/*!40000 ALTER TABLE `curso_programa` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
